@@ -1,11 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'export',
   images: {
-    domains: ['127.0.0.1', 'localhost'],
-  },
-  turbopack: {
-    root: __dirname,
+    unoptimized: true,
+    remotePatterns: [
+      { protocol: 'http', hostname: '127.0.0.1', port: '8000' },
+      { protocol: 'https', hostname: '**' },
+    ],
   },
 };
 
