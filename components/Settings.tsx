@@ -936,7 +936,7 @@ export default function Settings({ onClose }: SettingsProps) {
                           </button>
                           <div className="flex space-x-2">
                         <input
-                          ref={(el) => (fileInputRefs.current[product.id] = el)}
+                          ref={(el) => { fileInputRefs.current[product.id] = el; }}
                           type="file"
                           accept="image/jpeg,image/jpg,image/png,image/webp"
                           className="hidden"
